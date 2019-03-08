@@ -35,6 +35,7 @@ def train(args, model, mean_teacher, device, train_loader, test_loader, optimize
 
         ########################### CODE CHANGE HERE ######################################
         # forward pass with mean teacher
+        # torch.no_grad() prevents gradients from being passed into mean teacher model
         with torch.no_grad():
             mean_t_output = mean_teacher(data)
 
